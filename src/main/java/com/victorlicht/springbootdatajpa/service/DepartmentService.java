@@ -14,4 +14,7 @@ public class DepartmentService {
     public Department findById(Long id) {
         return departmentRepository.findById(id).orElseThrow();
     }
+    public Long count() {
+        return departmentRepository.count();
+    }
 }

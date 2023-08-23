@@ -13,7 +13,10 @@ import org.springframework.web.bind.annotation.RestController;
 public class DepartmentController {
     @Autowired
     private DepartmentService departmentService;
-
+    @GetMapping("/count")
+    public Long count() {
+        return departmentService.count();
+    }
     @GetMapping("/{id}")
     public Department findById(@PathVariable Long id) {
         return departmentService.findById(id);

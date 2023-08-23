@@ -1,9 +1,6 @@
 package com.victorlicht.springbootdatajpa.entity;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.Id;
-import jakarta.persistence.JoinColumn;
-import jakarta.persistence.ManyToOne;
+import jakarta.persistence.*;
 
 @Entity
 public class Employees {
@@ -12,9 +9,18 @@ public class Employees {
     private Long employee_id;
     private String name;
     private Double salary;
+
+    public Department getDepartment() {
+        return department;
+    }
+
+    public void setDepartment(Department department) {
+        this.department = department;
+    }
+
     @ManyToOne
     @JoinColumn(name = "department_id")
-    private Department department_id;
+    private Department department;
 
     public Long getEmployee_id() {
         return employee_id;
